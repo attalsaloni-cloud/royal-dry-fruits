@@ -1,0 +1,41 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+<h2 class="text-center">
+Search History
+</h2>
+
+<ul class="list-group mt-4">
+
+{% for item in history %}
+
+<li class="list-group-item">
+
+{{item.keyword}}
+
+<span class="float-end">
+
+{{item.searched_at}}
+
+</span>
+
+</li>
+
+{% empty %}
+
+<li class="list-group-item">
+
+No Search History
+
+</li>
+
+{% endfor %}
+
+</ul>
+
+</div>
+
+{% endblock %}

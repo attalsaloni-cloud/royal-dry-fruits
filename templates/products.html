@@ -1,0 +1,151 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+
+<h1 class="text-center mb-5 fw-bold">
+    Royal Dry Fruits Collection
+</h1>
+
+
+<div class="row g-4">
+
+
+{% for product in products %}
+
+
+<div class="col-lg-4 col-md-6">
+
+
+<div class="card shadow h-100 border-0">
+
+
+
+<!-- Product Image -->
+
+{% if product.image %}
+
+<img src="{{ product.image.url }}"
+class="card-img-top"
+height="280"
+style="object-fit:cover;">
+
+
+{% else %}
+
+<img src="{% static 'images/almonds.jpg' %}"
+class="card-img-top"
+height="280"
+style="object-fit:cover;">
+
+{% endif %}
+
+
+
+
+
+
+<div class="card-body text-center">
+
+
+
+<h4 class="fw-bold">
+{{ product.name }}
+</h4>
+
+
+
+<p class="text-muted">
+{{ product.category }}
+</p>
+
+
+
+<p>
+{{ product.description|truncatewords:12 }}
+</p>
+
+
+
+<h4 class="text-success fw-bold">
+₹ {{ product.price }}
+</h4>
+
+
+
+<p>
+<span class="badge bg-success">
+Stock: {{ product.stock }}
+</span>
+</p>
+
+
+
+
+<div class="d-flex justify-content-center gap-2">
+
+
+<a href="{% url 'product_detail' product.id %}"
+class="btn btn-outline-primary">
+
+View
+
+</a>
+
+
+
+<a href="{% url 'add_cart' product.id %}"
+class="btn btn-success">
+Add To Cart
+</a>
+
+</a>
+
+
+
+<a href="{% url 'add_wishlist' product.id %}"
+class="btn btn-danger">
+
+❤️ Add To Wishlist
+
+</a>
+
+
+</div>
+
+
+
+</div>
+
+
+
+</div>
+
+
+</div>
+
+
+
+{% empty %}
+
+
+<h3 class="text-center">
+No Products Available
+</h3>
+
+
+{% endfor %}
+
+
+
+</div>
+
+
+</div>
+
+
+{% endblock %}

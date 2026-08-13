@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+<h2 class="text-center text-success">
+Order Tracking
+</h2>
+
+<table class="table table-bordered mt-4">
+
+<tr>
+<th>Order</th>
+<th>Status</th>
+<th>Updated</th>
+</tr>
+
+{% for order in orders %}
+
+<tr>
+
+<td>#{{order.order.id}}</td>
+
+<td>
+
+{% if order.status == "Order Placed" %}
+
+🟡 Order Placed
+
+{% elif order.status == "Packed" %}
+
+🟠 Packed
+
+{% elif order.status == "Shipped" %}
+
+🔵 Shipped
+
+{% elif order.status == "Out For Delivery" %}
+
+🚚 Out For Delivery
+
+{% elif order.status == "Delivered" %}
+
+🟢 Delivered
+
+{% endif %}
+
+</td>
+
+<td>
+
+{{order.updated_at}}
+
+</td>
+
+</tr>
+
+{% endfor %}
+
+</table>
+
+</div>
+
+{% endblock %}

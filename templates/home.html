@@ -1,0 +1,156 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+
+{% block content %}
+
+
+<!-- Hero Section -->
+
+<div class="p-5 mb-4 bg-light rounded-3">
+
+
+<div class="container-fluid py-5">
+
+
+<h1 class="display-3 fw-bold text-center">
+
+Welcome To Royal Dry Fruits ❤️
+
+</h1>
+
+
+<p class="lead text-center">
+
+Premium quality 
+fresh and healthy dry fruits delivered to your doorstep.
+
+</p>
+
+<div class="text-center mt-3">
+<a href="{% url 'products' %}"
+class="btn btn-success btn-lg">
+
+Shop Now
+
+</a>
+</div>
+
+</div>
+
+
+</div>
+
+
+
+
+
+<h2 class="text-center mb-4">
+
+Our Premium Products
+
+</h2>
+
+
+
+
+
+<div class="row">
+
+
+{% for product in products %}
+
+
+<div class="col-md-3 mb-4">
+
+
+<div class="card h-100 shadow">
+
+
+
+{% if product.image %}
+
+
+<img src="{{product.image.url}}"
+class="card-img-top"
+height="220">
+
+
+{% else %}
+
+
+<img src="{% static 'images/almonds.jpg' %}"
+class="card-img-top"
+height="220">
+
+
+{% endif %}
+
+
+
+<div class="card-body">
+
+
+<h5 class="card-title">
+
+{{product.name}}
+
+</h5>
+
+
+
+<p>
+
+₹ {{product.price}}
+
+</p>
+
+
+
+
+<a href="{% url 'product_detail' product.id %}"
+class="btn btn-primary">
+
+View
+
+</a>
+
+
+<a href="{% url 'add_cart' product.id %}"
+class="btn btn-success">
+
+Cart
+
+</a>
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+{% empty %}
+
+
+<h4 class="text-center">
+
+No Products Available
+
+</h4>
+
+
+{% endfor %}
+
+
+
+</div>
+
+
+
+{% endblock %}

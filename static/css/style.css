@@ -1,0 +1,226 @@
+/* 
+Royal Dry Fruits
+Main CSS
+*/
+
+
+body{
+
+    font-family: 'Segoe UI', sans-serif;
+
+    background-color:#fffaf0;
+
+}
+
+
+
+/* Navbar */
+
+
+.navbar-brand{
+
+    font-size:25px;
+
+    letter-spacing:1px;
+
+}
+
+
+
+.navbar{
+
+    box-shadow:0 3px 10px rgba(0,0,0,0.2);
+
+}
+
+
+
+
+
+/* Hero Section */
+
+
+.bg-light{
+
+    background:
+    linear-gradient(
+    135deg,
+    #fff3cd,
+    #ffffff
+    );
+
+}
+
+
+
+
+
+/* Cards */
+
+
+.card{
+
+    border:none;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+    transition:0.3s;
+
+}
+
+
+
+.card:hover{
+
+    transform:translateY(-8px);
+
+    box-shadow:
+    0 10px 25px rgba(0,0,0,0.15);
+
+}
+
+
+
+.card img{
+
+    object-fit:cover;
+
+}
+
+
+
+
+
+/* Product Price */
+
+
+.text-success{
+
+    font-weight:bold;
+
+}
+
+
+
+
+
+/* Buttons */
+
+
+.btn{
+
+    border-radius:25px;
+
+    padding:10px 20px;
+
+    transition:0.3s;
+
+}
+
+
+
+.btn:hover{
+
+    transform:scale(1.05);
+
+}
+
+
+
+
+
+/* Footer */
+
+
+footer{
+
+    margin-top:50px;
+
+}
+
+
+
+footer h4{
+
+    color:#ffc107;
+
+}
+
+
+
+footer a:hover{
+
+    color:#ffc107 !important;
+
+}
+
+
+
+
+
+/* Forms */
+
+
+input,
+textarea,
+select{
+
+    border-radius:10px !important;
+
+    padding:12px !important;
+
+}
+
+
+
+
+
+/* Dashboard */
+
+
+.dashboard-card{
+
+    border-radius:20px;
+
+}
+
+
+
+
+
+/* Product Detail Image */
+
+
+.img-fluid{
+
+    border-radius:20px;
+
+}
+
+
+
+
+
+/* Mobile Responsive */
+
+
+@media(max-width:768px){
+
+
+    .display-5{
+
+        font-size:30px;
+
+    }
+
+
+    .card{
+
+        margin-bottom:20px;
+
+    }
+
+
+}

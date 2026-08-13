@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+<h2>Checkout</h2>
+
+
+<h4>Your Total: ₹{{total}}</h4>
+
+
+<form method="POST">
+
+{% csrf_token %}
+<form method="POST">
+
+{% csrf_token %}
+
+<label>Address</label>
+<textarea name="address" class="form-control" required></textarea>
+
+
+<label>Phone</label>
+<input 
+type="text" 
+name="phone" 
+class="form-control"
+required
+>
+
+
+</form>
+
+
+<button type="submit" class="btn btn-success">
+
+Proceed To Payment
+
+</button>
+
+
+
+
+{{form.as_p}}
+{% endblock %}

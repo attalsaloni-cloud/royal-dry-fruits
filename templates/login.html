@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+
+
+
+<div class="row justify-content-center mt-5">
+
+
+<div class="col-md-5">
+
+
+
+<div class="card shadow p-4">
+
+
+
+<h2 class="text-center mb-4">
+
+🔐 Login
+
+</h2>
+
+
+
+<form method="POST">
+
+
+{% csrf_token %}
+
+
+
+<div class="mb-3">
+
+
+<label>
+
+Username
+
+</label>
+
+
+<input type="text"
+name="username"
+class="form-control"
+placeholder="Enter username"
+required>
+
+
+</div>
+
+
+
+
+
+<div class="mb-3">
+
+
+<label>
+
+Password
+
+</label>
+
+
+<input type="password"
+name="password"
+class="form-control"
+placeholder="Enter password"
+required>
+
+
+</div>
+
+
+
+
+<button class="btn btn-success w-100">
+
+Login
+
+</button>
+
+
+
+</form>
+
+
+
+
+
+<p class="text-center mt-3">
+
+
+Don't have an account?
+
+
+<a href="{% url 'register' %}">
+
+Register
+
+</a>
+
+
+
+</p>
+
+
+
+</div>
+
+
+</div>
+
+
+</div>
+
+
+
+
+{% endblock %}

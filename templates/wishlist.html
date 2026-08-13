@@ -1,0 +1,71 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<h1 class="text-center">
+❤️ My Wishlist
+</h1>
+
+
+<div class="row">
+
+{% for item in products %}
+
+<div class="col-md-4 mb-4">
+
+<div class="card shadow">
+
+
+{% if item.product.image %}
+
+<img src="{{item.product.image.url}}"
+class="card-img-top"
+height="220">
+
+{% endif %}
+
+
+
+<div class="card-body">
+
+
+<h4>
+{{item.product.name}}
+</h4>
+
+
+<p>
+₹{{item.product.price}}
+</p>
+
+
+
+<a href="{% url 'add_cart' item.product.id %}"
+class="btn btn-success">
+
+Add To Cart
+
+</a>
+
+
+</div>
+
+</div>
+
+</div>
+
+
+{% empty %}
+
+<h3>
+Your Wishlist is Empty
+</h3>
+
+
+{% endfor %}
+
+
+</div>
+
+
+{% endblock %}
