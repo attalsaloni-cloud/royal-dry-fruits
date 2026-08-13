@@ -18,4 +18,4 @@ A Django-based E-commerce web application for purchasing dry fruits online.
 1. **Clone the repository:**
    ```bash
    git clone [https://github.com/attalsaloni-cloud/royal-dry-fruits.git](https://github.com/attalsaloni-cloud/royal-dry-fruits.git)
-   cd royal-dry-fruits
+cd royal-dry-fruits
